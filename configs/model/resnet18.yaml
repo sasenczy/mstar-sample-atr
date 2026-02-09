@@ -1,0 +1,12 @@
+# ResNet-18 adapted for SAR ATR
+name: resnet18
+
+# Whether to load ImageNet-pretrained weights as initialization
+# (first conv layer will be adapted for single-channel input regardless)
+pretrained: false
+
+# Dropout rate applied before the final classification layer
+dropout: 0.3
+
+# Number of output classes (should match dataset.num_classes)
+num_classes: 10

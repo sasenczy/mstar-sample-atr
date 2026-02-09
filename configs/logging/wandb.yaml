@@ -1,0 +1,12 @@
+# Weights & Biases experiment tracking
+enabled: true
+project: mstar-atr # W&B project name
+entity: null # W&B team/username (null = default)
+run_name: null # Auto-generated if null
+tags: ["mstar", "resnet18", "soc"]
+
+# What to log
+log_frequency: 10 # Log metrics every N batches
+log_confusion_matrix: true # Log confusion matrix each epoch
+log_gradcam: true # Log Grad-CAM visualizations
+save_model: true # Save best model checkpoint to W&B

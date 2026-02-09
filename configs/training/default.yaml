@@ -1,0 +1,17 @@
+# Training hyperparameters
+epochs: 100
+optimizer: adam # 'adam' or 'sgd'
+lr: 0.001 # Initial learning rate
+weight_decay: 0.0001 # L2 regularization
+
+# SGD-specific (ignored if optimizer=adam)
+momentum: 0.9
+
+# Learning rate scheduler
+scheduler: cosine # 'cosine', 'step', or 'none'
+# Step scheduler settings (ignored if scheduler != step)
+step_size: 30
+gamma: 0.1
+
+# Early stopping
+patience: 20 # Stop if val accuracy doesn't improve for N epochs

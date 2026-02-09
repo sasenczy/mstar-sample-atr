@@ -1,0 +1,11 @@
+# Main Hydra configuration — composes sub-configs from each group
+defaults:
+  - dataset: mstar
+  - model: resnet18
+  - training: default
+  - logging: wandb
+  - _self_ # This file's keys override sub-configs
+
+# Top-level settings
+seed: 42 # Global random seed for reproducibility
+output_dir: ./outputs # Directory for saved models and artifacts

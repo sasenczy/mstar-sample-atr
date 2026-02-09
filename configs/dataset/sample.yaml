@@ -1,0 +1,43 @@
+# Dataset configuration for SAMPLE (Synthetic and Measured Paired Labeled Experiment)
+# Split protocol per sample_public.pdf:
+#   Test:  measured (real) images at test_elevation (17 deg)
+#   Train: remaining images, with k controlling measured/synthetic ratio
+name: sample
+
+# Root directory containing png_images/{normalization}/{real,synth}/{class}/
+root_dir: ./data/sample/png_images
+
+# Image normalization type: "qpm" (quarter power magnitude) or "decibel"
+normalization: qpm
+
+# Measured/synthetic mixing ratio for training set
+# k=1.0: all measured, k=0.0: all synthetic, k=0.5: half and half
+k: 1.0
+
+# Elevation angle (as 3-digit string) to withhold for testing
+test_elevation: "017"
+
+# Number of target classes
+num_classes: 10
+
+# Image preprocessing
+image_size: 128
+num_channels: 1
+
+# Normalization statistics (computed from SAMPLE QPM real training partition)
+# QPM: mean=[0.2532], std=[0.1131]  |  Decibel: mean=[0.6039], std=[0.1182]
+# Update these if switching normalization to decibel
+mean: [0.2532]
+std: [0.1131]
+
+# Data augmentation (applied only to training set)
+augmentation:
+    random_rotation: 15
+    horizontal_flip: true
+    vertical_flip: true
+    gaussian_noise_std: 0.02
+
+# DataLoader settings
+batch_size: 64
+num_workers: 4
+pin_memory: true

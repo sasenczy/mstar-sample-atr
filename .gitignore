@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+*.pt
+*.pth
+*.ckpt
+data/
+wandb/
+CLAUDE.MD
+outputs/
+.claude/
+
+# Virtual environments
+.venv
+uv.lock

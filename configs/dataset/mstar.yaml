@@ -1,0 +1,29 @@
+# Dataset configuration for MSTAR SOC 10-class protocol
+name: mstar
+
+# Paths to pre-converted image directories
+train_dir: ./data/train
+test_dir: ./data/test
+
+# Number of target classes in SOC protocol
+num_classes: 10
+
+# Image preprocessing
+image_size: 128 # Resize all chips to 128x128
+num_channels: 1 # SAR images are single-channel grayscale
+
+# Normalization (computed from MSTAR training set; see Section 3)
+mean: [0.1305]
+std: [0.1250]
+
+# Data augmentation (applied only to training set)
+augmentation:
+  random_rotation: 15 # Degrees of random rotation
+  horizontal_flip: true # Random horizontal flip
+  vertical_flip: true # Random vertical flip
+  gaussian_noise_std: 0.02 # Std dev of additive Gaussian noise (0 = off)
+
+# DataLoader settings
+batch_size: 64
+num_workers: 4
+pin_memory: true
