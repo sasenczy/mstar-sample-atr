@@ -22,6 +22,7 @@ for i in $(seq 0 20); do
         python train.py
         dataset=sample
         dataset.k="${k}"
+        output_dir="./outputs/k_${k}"
         logging.project=sample-atr
         logging.run_name="k_${k}"
         logging.tags="[sample,resnet18,k_sweep]"

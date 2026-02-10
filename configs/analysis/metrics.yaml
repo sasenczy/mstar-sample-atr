@@ -1,0 +1,17 @@
+# Embedding metrics parameters
+checkpoint_dir: ./outputs
+k_values_start: 0.0
+k_values_end: 1.0
+k_values_step: 0.05
+output_dir: ./outputs/analysis
+
+# Plot settings
+dpi: 150
+
+# W&B logging
+wandb_enabled: true
+wandb_project: sample-atr
+
+hydra:
+  run:
+    dir: .

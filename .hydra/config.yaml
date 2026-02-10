@@ -1,0 +1,15 @@
+checkpoint_dir: ./outputs
+k_values:
+- 0.0
+- 0.25
+- 0.5
+- 0.75
+- 1.0
+output_dir: ./outputs/analysis
+n_neighbors: 15
+min_dist: 0.1
+metric: cosine
+random_state: 42
+dpi: 150
+wandb_enabled: true
+wandb_project: sample-atr
